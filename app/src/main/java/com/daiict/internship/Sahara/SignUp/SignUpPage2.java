@@ -12,6 +12,7 @@ import com.daiict.internship.Sahara.R;
 public class SignUpPage2 extends AppCompatActivity {
 
     String get_category;
+    String E_mail,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,8 @@ public class SignUpPage2 extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_page2);
         Intent intent = getIntent();
         get_category = intent.getStringExtra("category");
+        E_mail=intent.getStringExtra("Email");
+        password=intent.getStringExtra("Pass");
     }
 
     public void backBtnSignUpS(View view) {
@@ -31,6 +34,8 @@ public class SignUpPage2 extends AppCompatActivity {
         Intent intent = new Intent(this, SignUpPage3.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("category", get_category);
+        intent.putExtra("Pass",password);
+        intent.putExtra("Email",E_mail);
         startActivity(intent);
     }
 }
